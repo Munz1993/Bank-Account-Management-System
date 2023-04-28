@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+    %}
+    <div class="container"  action="{{ url_for('views.choice_page', choice_id=choice_id)}}"></form>>
+	<h1>Transactions Table</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Transaction ID</th>
+				<th>Amount</th>
+                <th>Date</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for transaction in transactions %}
+				<tr>
+					<td>{{ transaction.TRANSACTIONID }}</td>
+					<td>{{ transaction.AMOUNT }}</td>
+					<td>{{ transaction.TRANSACTIONDATE}}</td>
+                    <td>{{ transaction.DESCRIPTION}}</td>
+				</tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <form  method="POST" action="{{ url_for('views.delete_transaction', choice_id=choice_id )}}">
+       <br>
+      <label for="transactionID">Delete Transaction:</label>
+      <input type="number" id="transactionID" placeholder="Enter transaction_ID" name="transactionID" required>
+      <br>
+      <br>
+      <div align="center">
+        <button type="submit" class="btn btn-primary">Delete</button>
+      </div>
+
+    </form>
+{% endblock %}

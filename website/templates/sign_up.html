@@ -1,0 +1,119 @@
+{% extends "base.html" %} {% block title %}Registration{% endblock %} {% block
+    content %}
+    <form method="POST">
+      <h3 align="center">Register Yourself</h3>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          placeholder="Enter email"
+        />
+      </div>
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstName"
+          name="firstName"
+          placeholder="Enter first name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="lastName"
+          name="lastName"
+          placeholder="Enter last name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="CustAddress1">Address 1</label>
+        <input
+          type="text"
+          class="form-control"
+          id="CustAddress1"
+          name="CustAddress1"
+          placeholder="Enter address (mandatory) "
+        />
+      </div>
+      <div class="form-group">
+        <label for="CustAddress2">Address 2</label>
+        <input
+          type="text"
+          class="form-control"
+          id="CustAddress2"
+          name="CustAddress2"
+          placeholder="Enter Apt No. etc. (optional)"
+        />
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input
+          type="text"
+          class="form-control"
+          id="city"
+          name="city"
+          placeholder="Name of City"
+        />
+      </div>
+      <div class="form-group">
+        <label for="state">State</label>
+        <input
+          type="text"
+          class="form-control"
+          id="state"
+          name="state"
+          placeholder="Name of State"
+        />
+      </div>
+      <div class="form-group">
+        <label for="zipcode">Zip Code</label>
+        <input
+          type="text"
+          class="form-control"
+          id="zipcode"
+          name="zipcode"
+          placeholder="Enter Zip code (five digits only)"
+        />
+      </div>
+      <div class="form-group">
+        <label for="contactno">Contact:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="contactno"
+          name="contactno"
+          placeholder="Enter Mobile Number"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="password1">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password1"
+          name="password1"
+          placeholder="Enter password (at least 4 characters)"
+        />
+      </div>
+      <div class="form-group">
+        <label for="password2">Password (Confirm)</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password2"
+          name="password2"
+          placeholder="Confirm password"
+        />
+      </div>
+      <br />
+      <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+    {% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+  %}
+    <h3>Credit Card Application</h3>
+    <form method="POST" action="{{ url_for('views.choice_page', choice_id=choice_id) }}">
+      <br>
+      <label for="card-type">Select Card Type:</label>
+      <select id="card-type" name="card-type">
+        <option value="767">Student</option>
+        <option value="878">Rewards</option>
+        <option value="989">Gold</option>
+        <option value="909">Platinum</option>
+        <option value="565">Sapphire</option>
+      </select><br><br>
+      <input type="submit" value="Submit Application">
+    </form>
+  {% endblock %}

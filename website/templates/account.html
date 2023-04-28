@@ -1,0 +1,27 @@
+
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+  %}
+    <h3 align="center">Open Bank Account</h3><br>
+    <form  method="POST" action="{{ url_for('views.choice_page', choice_id=choice_id, branch_id=branch_id, cust_id=cust_id) }}">
+      {{ form.csrf_token }}
+      <!--<input type="hidden" name="branch_id" value="{{ 5566 }}">
+      <input type="hidden" name="cust_id" value="{{ 114152 }}">
+      <input type="hidden" name="choice_id" value="{{ choice_id }}">-->
+      <label for="account-type">Account type:</label>
+      <select id="account-type" name="account_type">        
+        <option value="333">Saving Account</option>
+        <option value="444">Checking Account</option>
+        <option value="111">Students Account</option>
+        <option value="222">Business Account</option>
+        <option value="555">Executvie Account</option>
+      </select>
+      <br>
+      <label for="initial-deposit">Initial deposit:</label>
+      <input type="number" id="initial-deposit" placeholder="Enter Amount" name="initial_deposit" min="0" required>
+      <br>
+      <br>
+      <div align="center">
+        <button type="submit" class="btn btn-primary">Proceed</button>
+      </div>
+    </form>
+  {% endblock %}

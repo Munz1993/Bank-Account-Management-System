@@ -1,0 +1,33 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+  %}
+    <div class="container"  action="{{ url_for('views.choice_page', choice_id=choice_id)}}"></form>>
+      <h4 align="center">Profile Overview</h4>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Sr. No.</th>
+            <th>Type</th>
+            <th>Balance/Limit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Account</td>
+            <td>{{ account_balance }}</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Credit Card</td>
+            <td>{{ credit_card_limit }}</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Loan</td>
+            <td>{{ loan_outstanding }}
+             </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  {% endblock %}

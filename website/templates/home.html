@@ -1,0 +1,42 @@
+
+
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+    %}
+    <h1 align="center">Welcome </h1>
+    <form method="POST" action="{{ url_for('views.home', choice_id=choice_id, branch_id=branch_id, cust_id=cust_id) }}">
+        {{ form.csrf_token }}
+        <!--<input type="hidden" name="branch_id" value="{{ 5566 }}">
+        <input type="hidden" name="cust_id" value="{{ cust_id }}">
+        <input type="hidden" name="choice_id" value="{{ choice_id }}">-->
+        <div class="form-group">
+            <input type="radio" id="choice1" name="choices" value="1">
+            <label for="choice1">Open Account</label><br>
+            <input type="radio" id="choice2" name="choices" value="2">
+            <label for="choice2">Get Credit Card</label><br>
+            <input type="radio" id="choice3" name="choices" value="3">
+            <label for="choice3">Get Loan</label><br>
+            <input type="radio" id="choice4" name="choices" value="4">
+            <label for="choice4">Make Transaction</label><br>
+            <input type="radio" id="choice5" name="choices" value="5">
+            <label for="choice5">Delete Transaction</label><br>
+            <input type="radio" id="choice6" name="choices" value="6">
+            <label for="choice6">View Balances</label><br>
+            <ul class="list-group list-group-flush" id="notes">
+              {% for note in user.notes %}
+              <li class="list-group-item">
+                {{ note.DATA }}
+                <button type="button" class="close" onClick="deleteNote({{ note.ID }})">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </li>
+              {% endfor %}
+            </ul>
+            <textarea name="note" id="note" class="form-control"></textarea>
+            <br />
+            <div align="center">
+                <button type="submit" class="btn btn-primary">Proceed</button>
+            </div>
+        </div>
+    </form>
+    
+{% endblock %}

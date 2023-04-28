@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+  %}
+    <h3>Loan Application</h3>
+    <form method="POST" action="{{ url_for('views.choice_page', choice_id=choice_id) }}">
+      <label for="income">Annual Income:</label>
+      <input type="number" id="income" name="income" required><br><br>
+      <label for="credit_score">Credit Score:</label>
+      <input type="number" id="credit_score" name="credit_score" required><br><br>
+      <label for="loan_amount">Loan Amount:</label>
+      <input type="number" id="loan_amount" name="loan_amount" required><br><br>
+      <label for="period">Duration</label>
+      <select id="period" name="period">
+        <option value="3">3 years</option>
+        <option value="5">5 years</option>
+        <option value="10">10 years</option>
+        <option value="20">20 years</option>
+      </select><br><br>
+      <input type="submit" value="Submit Application">
+    </form>
+  {% endblock %}
